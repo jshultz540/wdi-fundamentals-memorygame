@@ -1,4 +1,4 @@
- console.log("Up and running!");
+ //console.log("Up and running!");
 
 
 
@@ -8,22 +8,30 @@ var cardsInPlay = [];
 var cardOne = cards [0];
 var cardTwo = cards [1];
 
+var checkForMatch = function () {
 
-cardsInPlay.push(cardOne);
-console.log("User flipped " + cardsInPlay[0]);
+if (cardsInPlay[0] === cardsInPlay[1]) {
+		alert("You found a match!");
+		}
+	else {
+		alert("Sorry, try again");
+		}
 
-cardsInPlay.push(cardTwo);
+}
 
-console.log("User flipped " + cardsInPlay[1]);
+
+var flipCard = function(cardId){
+
+console.log("User flipped " +cards[cardId]);
+cardsInPlay.push(cards[cardId]);
 
 if (cardsInPlay.length === 2)  {
 	
- if (cardsInPlay[0] === cardsInPlay[1]) {
-		alert("You found a match!");
-	}
-	else {
-		alert("Sorry, try again");
-	}
+ checkForMatch();
 
+	}
 
 }
+
+flipCard(0);
+flipCard(2);
